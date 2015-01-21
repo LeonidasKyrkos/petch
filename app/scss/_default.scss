@@ -1,4 +1,4 @@
-.contentWrap {
+.content__wrap {
 	max-width: em($contentWidth);
 	margin: 0 auto;
 	padding: 0 em(20);
@@ -25,29 +25,4 @@ h2 {
 
 p {
 	padding-bottom: em(10);
-}
-
-.panels {
-	@include display(flex);
-	@include justify-content(space-between);
-	padding-top: em(30);
-}
-
-.panel {
-	width: 32%;
-	background-color: $mapRed;
-	padding-bottom: 32%;
-	display: inline-block;
-	background-size: cover;
-	background-repeat: no-repeat;
-
-	&:nth-child(1) {
-		background-image: url(../../img/mountain1.jpg);
-	}
-	&:nth-child(2) {
-		background-image: url(../../img/path.jpg);
-	}
-	&:nth-child(3) {
-		background-image: url(../../img/moon.jpg);
-	}
 }

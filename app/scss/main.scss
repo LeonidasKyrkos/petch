@@ -7,3 +7,17 @@
 body{
 	background-color: $white;
 }
+
+.header {
+	height: em(375);
+	background-color: $secondaryGray;
+}
+
+.header__EP-logo{
+	width: auto;
+	height: 100%;
+	background-image: url(../../img/innocentandcyniclogo.png);
+	background-position: center center;
+	background-size: auto auto;
+	background-repeat: no-repeat;
+}
