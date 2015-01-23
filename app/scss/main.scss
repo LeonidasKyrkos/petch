@@ -5,19 +5,133 @@
 @import 'utils/variables';
 
 body{
-	background-color: $white;
+	background-color: #046791;
 }
 
-.header {
-	height: em(375);
-	background-color: $secondaryGray;
+main {
+	max-width: 95%;
+	margin: 0 auto;
 }
 
-.header__EP-logo{
-	width: auto;
-	height: 100%;
-	background-image: url(../../img/innocentandcyniclogo.png);
-	background-position: center center;
-	background-size: auto auto;
-	background-repeat: no-repeat;
+.content__wrap {
+	padding: 0 em(25);
 }
+
+$module:    header;
+
+.#{$module} {
+	height: auto;
+	max-width: em($contentWidth);
+	position: relative;
+	margin: 0 auto;
+	min-height: em(220);
+
+	&__EP-logo {
+		width: auto;
+		height: 100%;
+		background-image: url(../../img/innocentandcyniclogo.png);
+		background-position: center center;
+		background-size: auto auto;
+		background-repeat: no-repeat;
+		display: none;
+	}
+
+	&__speaker {
+		width: em(143);
+		height: em(220);
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: em(20);
+		top: em(10);
+		background-image: url("../../img/speaker.png");
+
+		&:before {
+			content: "";
+			width: em(720);
+			height: em(3);
+			bottom: 0;
+			left: 80%;
+			position: absolute;
+			background-color: #282428;
+			z-index: 2;
+		}
+	}
+
+	&__speaker--right {
+		@extend .header__speaker;
+		left: auto;
+		right: em(20);
+		@include transform(scale(-1)rotate(180deg));
+
+		&:before {
+			content: none;
+		}
+	}
+
+	&__title {
+		font-family: $secondaryFontFamily;
+		color: $white;
+		text-shadow: 0 0 1px $black;
+		padding-top: em(70,70);
+	}
+
+	&__nav {
+		margin: em(20) auto 0;
+		text-align: center;
+	}
+
+	&__nav-item {
+		display: inline-block;
+		vertical-align: middle;
+		text-transform: lowercase;
+		padding: em(5) em(10);
+		color: $white;
+		opacity: 0.96;
+		letter-spacing: 0.3px;
+		cursor: pointer;
+		@include transition(transform 0.2s ease);
+
+		&:nth-child(1) {
+			background-color: #A31E39;
+		}
+		&:nth-child(2) {
+			background-color: darken(#9BD7D5,10%);
+		}
+		&:nth-child(3) {
+			background-color: #FF7260;
+		}
+
+		&:hover {
+			@include transform(translateY(-2px));
+		}
+	}
+}
+
+
+
+.content__title {
+	font-size: em(36);
+	padding-bottom: em(5,36);
+	//border-bottom: 1px solid rgba(0,0,0,0.4);
+	color: $white;
+	text-shadow: 0 0 1px rgba(0,0,0,0.6);
+}
+
+.content__post {
+	padding: 10px 20px 20px;
+	box-shadow: 0px 0px 2px lighten($black,10%);
+	//border: 1px solid $darkGray;
+	margin: em(50) auto;
+	border-radius: 8px;
+	background-color: #BFCFCC;
+	color: $black;
+	p {
+		line-height: 1.2;
+
+		&:first-of-type {
+			padding-top: em(10);
+		}
+	}
+}
+
