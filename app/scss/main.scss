@@ -95,6 +95,39 @@ $module:    header;
 		padding-top: em(30,70);
 	}
 
+	&__social-pointer {
+		position: absolute;
+		top: em(50);
+		left: em(200);
+		opacity: 0.8;
+		&:after {
+			content: "";
+			position: absolute;
+			width: em(62);
+			height: em(55);
+			background-image: url(../../img/arrow.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			left: em(-30);
+			bottom: em(-35);
+			opacity: 0.8;
+		}
+	}
+
+	&__social-pointer--one {
+		display: block;
+		font-size: em(32);
+		color: $white;
+		font-family: $tertiaryFontFamily;
+		@include transform(rotate(-3deg));
+	}
+
+	&__social-pointer--two {
+		@extend .header__social-pointer--one;
+		padding-left: em(30,24);
+		margin-top: em(-5,24);
+	}
+
 	&__social-icons {
 		position: absolute;
 		width: em(120);
@@ -308,20 +341,21 @@ $module: 		content;
 
 		&:after {
 			content: "";
-			background-color: $borderGray;
+			background-color: $white;
 			height: 1px;
 			width: 70%;
 			margin: 0 auto;
 			display: block;
 			margin-top: em(20);
-			clear: both;
+			opacity: 0.1;
 		}
 
 		p {
 			line-height: 1.2;
+			font-size: em(20);
 
 			&:first-of-type {
-				padding-top: em(10);
+				padding-top: em(10,20);
 			}
 		}
 	}
