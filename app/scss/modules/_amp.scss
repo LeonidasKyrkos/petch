@@ -1,0 +1,88 @@
+$module:    'amp';
+
+.#{$module} {
+	&__wrap {
+		position: absolute;
+		left: 0;
+		right: 0;
+		max-width: em(180);
+		bottom: 0;
+		height: em(164);
+		margin: 0 auto;
+	}
+	&__head {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		max-width: em(179);
+		margin: 0 auto;
+		background-image: url(../../img/body_top.png);
+		height: em(44);
+		z-index: 3;
+	}
+	&__middle {
+		position: absolute;
+		top: em(34);
+		height: em(52);
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		background-image: url(../../img/spool_back.png);
+		z-index: 2;
+	}
+	&__spool-big {
+		width: em(88);
+		height: em(88);
+		position: absolute;
+		left: em(10);
+		top: 50%;
+		margin-top: em(-44);
+		background-image: url(../../img/spool_big.png);
+	}
+	&__spool-small {
+		@extend .amp__spool-big;
+		left: auto;
+		right: em(3);
+		background-image: url(../../img/spool_small.png);
+	}
+	&__base {
+		max-width: em(180);
+		height: em(100);
+		background-image: url(../../img/body_bottom.png);
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		top: em(74);
+		z-index: 2;
+	}
+	&__play-wrap {
+		width: em(69);
+		height: em(53);
+		background-image: url(../../img/play_button_back.png);
+		position: absolute;
+		top: em(10);
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	&__play-button {
+		width: em(37);
+		height: em(33);
+		outline: none;
+		border: none;
+		background-image: url(../../img/play_button_off.png);
+		background-color: transparent;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		margin-top: em(-16);
+	}
+	&__play-button--active {
+		@extend .amp__play-button;
+		background-image: url(../../img/play_button_on.png);
+	}
+}

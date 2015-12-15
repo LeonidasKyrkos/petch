@@ -6,7 +6,7 @@
 @import 'variables';
 
 *{
-	@include box-sizing(border-box); // IE8 Compatabile (doesnt work with max-width,min width however careful)
+	box-sizing: border-box;
 }
 
 html {

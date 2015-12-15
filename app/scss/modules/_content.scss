@@ -1,0 +1,58 @@
+$module: 		'content';
+
+.#{$module} {
+	&__title {
+		font-size: em(30);
+		padding-bottom: em(5,36);
+		//border-bottom: 1px solid rgba(0,0,0,0.4);
+		color: $white;
+		text-shadow: 0 0 1px rgba(0,0,0,0.6);
+		text-transform: lowercase;
+	}
+
+	&__post {
+		padding: 0 20px 0;
+		//box-shadow: 0px 0px 2px lighten($black,10%);
+		//border: 1px solid $darkGray;
+		margin: em(20) auto 0;
+		//border-radius: 8px;
+		background-color: transparent;
+		font-weight: 400;
+		color: $secondaryGray;
+		//border-bottom: 1px solid $white;
+
+		&:after {
+			content: "";
+			background-color: $white;
+			height: 1px;
+			width: 70%;
+			margin: 0 auto;
+			display: block;
+			margin-top: em(20);
+			opacity: 0.1;
+		}
+
+		p {
+			line-height: 1.2;
+			font-size: em(20);
+
+			&:first-of-type {
+				padding-top: em(10,20);
+			}
+		}
+	}
+
+	&__image {
+		max-width: em(300);
+		height: auto;
+		display: block;
+		@include transition(transform 0.3s);
+		cursor: pointer;
+		display: block;
+		margin: 0 auto;
+		padding-top: em(10);
+		&:hover {
+			@include transform(scale(1.4));
+		}
+	}
+}
